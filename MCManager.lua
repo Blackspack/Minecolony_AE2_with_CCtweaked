@@ -1,6 +1,11 @@
-colony = peripheral.find("colonyIntegrator")
+function update()
+    colony = peripheral.find("colonyIntegrator")
+    workRequests = colony.getRequests()
+end
+update()
+
 me = peripheral.find("meBridge")
-storage = "front" --Storage for export need to change 
+storage = "left" --Storage for export need to change 
 if colony == nil then error("colonyIntegrator not found") end
 if me == nil then error("MEBridge not found") end
 if not colony.isInColony then error("Block is not in a colony") end
@@ -38,7 +43,7 @@ function working()
 end
 function Main()
     while true do
-        workRequests = colony.getRequests()
+        update()
         check()
         os.sleep(30)
     end
