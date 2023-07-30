@@ -4,7 +4,6 @@ storage = "front" --Storage for export need to change
 if colony == nil then error("colonyIntegrator not found") end
 if me == nil then error("MEBridge not found") end
 if not colony.isInColony then error("Block is not in a colony") end
-workRequests = colony.getRequests()
 print("Colony name:".. colony.getColonyName())
 
 
@@ -39,6 +38,7 @@ function working()
 end
 function Main()
     while true do
+        workRequests = colony.getRequests()
         check()
         os.sleep(30)
     end
