@@ -11,7 +11,7 @@ print("Colony name:".. colony.getColonyName())
 
 function check()
         print("check")
-    if workRequests[1] == nil then print("Liste Leer")             
+    if workRequests[1] == nil then print("List is empty")             
             print("sleep")
             sleep(5)
         else
