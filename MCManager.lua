@@ -40,12 +40,12 @@ function working()
           me.exportItem({name=name1, count=count1, nbt=nil}, storage)
         end    
     end
+    sleep(30)
 end
 function Main()
     while true do
         update()
         check()
-        os.sleep(30)
     end
 end
 
