@@ -5,7 +5,7 @@ end
 update()
 
 me = peripheral.find("meBridge")
-storage = "left" --Storage for export need to change 
+storage = "left" --Storage for export need to change to right, left, front, back, top, bottom or north, south, east, west, up, down
 if colony == nil then error("colonyIntegrator not found") end
 if me == nil then error("MEBridge not found") end
 if not colony.isInColony then error("Block is not in a colony") end
@@ -37,7 +37,7 @@ function working()
           print("")
           name1 = workRequests[w].items[1].name
           count1 = workRequests[w].count
-          me.exportItemToPeripheral({name=name1, count=count1, nbt=nil}, storage)
+          me.exportItem({name=name1, count=count1, nbt=nil}, storage)
         end    
     end
 end
